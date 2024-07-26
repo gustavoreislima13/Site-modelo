@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <title>SITE MODELO</title>
+</head>
+
+<body>
+  <header data-aos="fade-down">
+    <nav data-aos="fade-right">
+      <ul class="nav__links">
+        <li class="link__logo"><a href="#home">SNEAKERS 84</a></li>
+        <li class="link"><a href="#home">HOME</a></li>
+        <li class="link"><a href="#envio">ENVIO</a></li>
+        <li class="link"><a href="#ofertas">OFERTAS</a></li>
+        <li class="link"><a href="#marcas">MARCAS</a></li>
+        <li class="link"><a href="catalogo.html">CATÁLOGO</a></li>
+      </ul>
+      <div class="social__icons" data-aos="fade-left">
+        <span><i class="ri-facebook-fill"></i></span>
+        <span><i class="ri-twitter-fill"></i></span>
+        <span><i class="ri-whatsapp-fill"></i></span>
+        <span><i class="ri-instagram-line"></i></span>
+        <div class="cart-icon" onclick="toggleCart()" data-aos="fade-left">
+          <i class="ri-shopping-cart-2-fill"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </nav>
+    <div id="home" class="section_container header__container" data-aos="fade-up">
+      <div class="header__content">
+        <h1>Sneakers<br />84</h1>
+        <p>TENHA 10% OFF NA SUA PRIMEIRA COMPRA</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main__container">
+    <div class="main__content">
+      <section id="envio" class="service__container">
+        <div class="service__card" data-aos="fade-up">
+          <span><i class="ri-flight-takeoff-fill"></i></span>
+          <h4>ENVIO PARA TODO BRASIL</h4>
+          <p>Envio nacional com segurança e garantia! Seu pedido totalmente rastreável!</p>
+        </div>
+        <div class="service__card" data-aos="fade-up">
+          <span><i class="ri-truck-line"></i></span>
+          <h4>PEDIDO DENTRO DO PRAZO!</h4>
+          <p>Caso seu pedido não tenha sido entregue antes do prazo nossa equipe irá realizar todo o suporte necessário
+          </p>
+        </div>
+        <div class="service__card" data-aos="fade-up">
+          <span><i class="ri-time-line"></i></span>
+          <h4>PRAZO DE DEVOLUÇÃO</h4>
+          <p>O consumidor possui até 7 dias para devolução do produto sendo o mesmo ainda lacrado</p>
+        </div>
+        <div class="service__card" data-aos="fade-up">
+          <span><i class="ri-customer-service-2-line"></i></span>
+          <h4>SUPORTE PERSONALIZADO</h4>
+          <p>Nossa equipe é voltada para tirar sua dúvidas e te auxíliar em qualquer situação</p>
+        </div>
+      </section>
+
+      <section id="ofertas" class="banner">
+        <div class="banner__content" data-aos="fade-up">
+          <p class="subtitle">OFERTA DO MÊS</p>
+          <h4 class="title">Adidas Campus 00s</h4>
+          <p class="description">
+            Chamado de "Campus 00s", esse modelo tão amado está sendo reinterpretado com materiais e detalhes de design
+            contemporâneos. Desde o solado ultra durável feito de borracha até o cabedal de camurça que exala um estilo
+            atemporal.
+          </p>
+          <div class="price"><span>R$859,90</span> <del>R$1.099,00</del></div>
+          <div class="countdown">
+            <div class="square">
+              <p id="hours">09</p>
+              <span>HORAS</span>
+            </div>
+            <div class="square">
+              <p id="minutes">56</p>
+              <span>MINUTOS</span>
+            </div>
+            <div class="square">
+              <p id="seconds">11</p>
+              <span>SEGUNDOS</span>
+            </div>
+          </div>
+          <button
+            onclick="showProductDetails('Adidas campus 00s')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="banner__image" data-aos="fade-left"></div>
+      </section>
+
+      <section id="marcas" class="collection__container">
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/Yezzy 350 cards.png" alt="collection" />
+          <h4>Yezzy 350 V2</h4>
+          <p>R$1.390,00 <del></del></p>
+          <button
+            onclick="showProductDetails('yezzy 350 v2')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/aj4 cards green.png" alt="collection" />
+          <h4>Air jordan 4 Seafom</h4>
+          <p>R$1.399,90 <del>R$2.220,00</del></p>
+          <button
+            onclick="showProductDetails('Air jordan 4')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/yezzy 700 v3 cards.png" alt="collection" />
+          <h4>Yezzy 700 v3</h4>
+          <p>R$1.489,00 <del>R$1.990,00</del></p>
+          <button
+            onclick="showProductDetails('Yezzy 700 v3')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/forum low orange cards.png" alt="collection" />
+          <h4>Adidas Forum low</h4>
+          <p>R$759,00 <del></del></p>
+          <button
+            onclick="showProductDetails('Adidas Forum low')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__card" data-aos="fade-up">
+          <h4>TODA LINHA NIKE</h4>
+          <p>COM 20% OFF</p>
+        </div>
+        <div class="collection__image" data-aos="fade-up">
+          <img src="assets/pexels-perfect-lens-11737227.jpg" alt="collection" />
+        </div>
+        <div class="collection__banner" data-aos="fade-up">
+          <div class="collection__banner__content">
+            ENTRE<br />PRO<br />TEAM!<br />
+          </div>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/Dunk low jumbo cards.png" alt="collection" />
+          <h4>Nike Dunk low Jumbo</h4>
+          <p>R$999,00 <del>R$1.199,00</del></p>
+          <button
+            onclick="showProductDetails('Nike Dunk low')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/aj1 university cards.png" alt="collection" />
+          <h4>Air jodan 1</h4>
+          <p>R$1.390,00 <del>R$1.990,00</del></p>
+          <button
+            onclick="showProductDetails('Air jodan 1')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/air max 90 cards.png" alt="collection" />
+          <h4>Air max 90</h4>
+          <p>R$600,00 <del>R$739,00</del></p>
+          <button
+            onclick="showProductDetails('Air max 90')">COMPRE
+            AGORA</button>
+        </div>
+        <div class="collection__image" data-aos="zoom-in">
+          <img src="assets/air force 1 stussy cards.png" alt="collection" />
+          <h4>Air Force 1xStussy</h4>
+          <p>R$1.390,00 <del>R$1.800,90</del></p>
+          <button
+            onclick="showProductDetails('Air Force 1xStussy')">COMPRE
+            AGORA</button>
+        </div>
+      </section>
+
+      <section class="brands__container">
+        <div class="brand__image" data-aos="zoom-in">
+          <img src="assets/brand-1.png" alt="brand" />
+        </div>
+        <div class="brand__image" data-aos="zoom-in">
+          <img src="assets/brand-2.png" alt="brand" />
+        </div>
+        <div class="brand__image" data-aos="zoom-in">
+          <img src="assets/download-removebg-preview (5).png" alt="brand" />
+        </div>
+        <div class="brand__image" data-aos="zoom-in">
+          <img src="assets/download-removebg-preview (6).png" alt="brand" />
+        </div>
+        <div class="brand__image" data-aos="zoom-in">
+          <img src="assets/download-removebg-preview (7).png" alt="brand" />
+        </div>
+        <div class="brand__image" data-aos="zoom-in">
+          <img src="assets/download-removebg-preview (8).png" alt="brand" />
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer data-aos="fade-up">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h4>SHOPS</h4>
+        <p>Air jordan</p>
+        <p>Nike</p>
+        <p>Yezzy</p>
+        <p>Adidas</p>
+        <p>New balance</p>
+        <p>Puma</p>
+      </div>
+      <div class="footer__col">
+        <h4>INFORMAÇÔES</h4>
+        <p>Sobre nós</p>
+        <p>Suporte personalizado</p>
+        <p>Política de privacidade</p>
+      </div>
+      <div class="footer__col">
+        <h4>SE CONECTE</h4>
+        <div class="footer__socials">
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-whatsapp-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="section__container footer__bar">
+      <div class="copyright">
+        SNEAKERS 84 © 2024 Web Design.
+      </div>
+      <div class="payment__cards">
+        <span><i class="ri-visa-fill"></i></span>
+        <span><i class="ri-bank-card-2-fill"></i></span>
+        <span><i class="ri-mastercard-line"></i></span>
+        <span><i class="ri-bank-card-2-line"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cart" data-aos="fade-up">
+    <button class="close-cart" onclick="toggleCart()">X</button>
+    <h4>Meu Carrinho</h4>
+    <ul id="cart-items"></ul>
+    <p>Total: R$<span id="cart-total">0</span></p>
+    <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+  </div>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div id="productDetails">
+        <!-- Detalhes do produto serão inseridos aqui dinamicamente -->
+      </div>
+      <div id="productImages">
+        <!-- Imagens adicionais do produto serão inseridas aqui -->
+      </div>
+      <button class="checkout-btn" onclick="finalizePurchase()">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
+ 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>Catálogo de Tênis</title>
+</head>
+
+<body>
+  <header data-aos="fade-down">
+    <nav data-aos="fade-right">
+      <ul class="nav__links">
+        <li class="link__logo"><a href="index.html">SNEAKERS 84</a></li>
+        <li class="link"><a href="index.html">HOME</a></li>
+        <li class="link"><a href="index.html#envio">ENVIO</a></li>
+        <li class="link"><a href="index.html#ofertas">OFERTAS</a></li>
+        <li class="link"><a href="index.html#marcas">MARCAS</a></li>
+        <li class="link"><a href="catalogo.html">CATÁLOGO</a></li>
+      </ul>
+      <div class="social__icons" data-aos="fade-left">
+        <span><i class="ri-facebook-fill"></i></span>
+        <span><i class="ri-twitter-fill"></i></span>
+        <span><i class="ri-whatsapp-fill"></i></span>
+        <span><i class="ri-instagram-line"></i></span>
+        <div class="cart-icon" onclick="toggleCart()" data-aos="fade-left">
+          <i class="ri-shopping-cart-2-fill"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main__container" style="margin-top: 100px;">
+    <div class="main__content">
+      <section id="catalogo" class="catalog__container">
+        <h2>Catálogo</h2>
+        <div class="catalog__items">
+          <div class="catalog__item" onclick="showProductDetails('Adidas campus 00s')">
+            <img src="assets/campus oferta.png" alt="Adidas Campus 00s">
+            <h4>Adidas Campus 00s</h4>
+            <p>R$1.390,00</p>
+          </div>
+          <div class="catalog__item" onclick="showProductDetails('yezzy 350 v2')">
+            <img src="assets/air-jordan-iii-1.png" alt="Yezzy 350 V2">
+            <h4>Yezzy 350 V2</h4>
+            <p>R$1.390,00</p>
+          </div>
+          <div class="catalog__item" onclick="showProductDetails('Air jordan 4')">
+            <img src="assets/yeezy-700-v3-1.png" alt="Air Jordan 4">
+            <h4>Air Jordan 4</h4>
+            <p>R$1.299,90</p>
+          </div>
+          <div class="catalog__item" onclick="showProductDetails('Air force 1')">
+            <img src="assets/air-force-1-low-chili-pepper-1.webp" alt="Air Force 1">
+            <h4>Air Force 1</h4>
+            <p>R$1.299,90</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer data-aos="fade-up">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h4>SHOPS</h4>
+        <p>Air jordan</p>
+        <p>Nike</p>
+        <p>Yezzy</p>
+        <p>Adidas</p>
+        <p>New balance</p>
+        <p>Puma</p>
+      </div>
+      <div class="footer__col">
+        <h4>INFORMAÇÔES</h4>
+        <p>Sobre nós</p>
+        <p>Suporte personalizado</p>
+        <p>Política de privacidade</p>
+      </div>
+      <div class="footer__col">
+        <h4>SE CONECTE</h4>
+        <div class="footer__socials">
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-whatsapp-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="section__container footer__bar">
+      <div class="copyright">
+        SNEAKERS 84 © 2024 Web Design.
+      </div>
+      <div class="payment__cards">
+        <span><i class="ri-visa-fill"></i></span>
+        <span><i class="ri-bank-card-2-fill"></i></span>
+        <span><i class="ri-mastercard-line"></i></span>
+        <span><i class="ri-bank-card-2-line"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cart" data-aos="fade-up">
+    <button class="close-cart" onclick="toggleCart()">X</button>
+    <h4>Meu Carrinho</h4>
+    <ul id="cart-items"></ul>
+    <p>Total: R$<span id="cart-total">0</span></p>
+    <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+  </div>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div id="productDetails">
+        <!-- Detalhes do produto serão inseridos aqui dinamicamente -->
+      </div>
+      <div id="productImages">
+        <!-- Imagens adicionais do produto serão inseridas aqui -->
+      </div>
+      <button class="checkout-btn" onclick="finalizePurchase()">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
